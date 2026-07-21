@@ -6,15 +6,51 @@ body {
   padding: 24px 16px;
   color: #0b1e33;
 }
-.app {
-  max-width: 1400px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 28px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-  padding: 24px 28px;
-}
+.app-shell { min-height: 100vh; }
+.main-content { padding-top: 0px; }
+
 h1 { font-weight: 600; font-size: 1.8rem; letter-spacing: -0.02em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.page-intro {
+  color: #516070;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.home-card {
+  text-decoration: none;
+  display: block;
+  background: linear-gradient(135deg, #f7fbff 0%, #eef5ff 100%);
+  border: 1px solid #dce7f5;
+  border-radius: 20px;
+  padding: 18px;
+  color: #15304b;
+  box-shadow: 0 8px 18px rgba(21, 48, 75, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.home-card:hover {
+  transform: translateY(-2px);
+  border-color: #1a2b4a;
+}
+.home-card h2 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.home-card p {
+  font-size: 0.95rem;
+  color: #4d5d72;
+  line-height: 1.5;
+}
+.dashboard-section,
+.stacked-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid #e9edf4; padding-bottom: 12px; margin-bottom: 24px; }
 .tab-btn {
   background: transparent;

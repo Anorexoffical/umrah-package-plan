@@ -1,6 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const links = [
+    { to: '/', label: '🏠 Home' },
+    { to: '/package-creation', label: '✏️ Package Creation' },
+    { to: '/pattern-generator', label: '📋 Pattern' },
+    { to: '/package-calculator', label: '💰 Calculator' },
+    { to: '/rooms', label: '🏨 Rooms' },
+  ];
+
   return (
     <nav style={{
       display: 'flex',
@@ -13,19 +21,17 @@ const Navbar = () => {
       position: 'sticky',
       top: 0,
       zIndex: 100,
+      flexWrap: 'wrap',
     }}>
       <span style={{ color: '#fff', fontSize: '22px', fontWeight: 'bold', letterSpacing: '1px', marginRight: 'auto' }}>
         🕌 Umrah Planner
       </span>
 
-      {[
-        { to: '/', label: '🏠 Home' },
-        { to: '/package-creation', label: '✏️ Package Creation' },
-      ].map(({ to, label }) => (
+      {links.map(({ to, label }) => (
         <NavLink
           key={to}
           to={to}
-          end
+          end={to === '/'}
           style={({ isActive }) => ({
             padding: '8px 18px',
             borderRadius: '6px',
